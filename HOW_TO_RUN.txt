@@ -1,0 +1,212 @@
+================================================================================
+                     UniPlanner - University Planning Application
+                              How to Run Instructions
+================================================================================
+
+PROJECT INFORMATION
+-------------------
+Application Name: UniPlanner
+Version: 1.0
+Framework: .NET 8.0 (Windows Forms)
+Database: SQLite (local file-based storage)
+Developers: Seoyoon Kim (25388442), Jin Lee (25388733)
+Subject: 32998 - .NET Applications Development - Spring 2025
+
+
+SYSTEM REQUIREMENTS
+-------------------
+- Operating System: Windows 10 or higher (64-bit)
+- Runtime: .NET 8.0 Runtime or SDK
+- Disk Space: Minimum 50 MB free space
+- Memory: Minimum 2 GB RAM
+- Display: 1280x720 resolution or higher recommended
+
+
+INSTALLATION & SETUP
+--------------------
+No installation required! UniPlanner is a standalone desktop application.
+
+1. Extract the submitted zip file to your desired location
+2. Navigate to the extracted folder
+3. The database (uni.db) will be automatically created on first run
+
+
+HOW TO RUN THE APPLICATION
+---------------------------
+
+METHOD 1: Running the Executable (Recommended)
+-----------------------------------------------
+1. Navigate to: bin\Debug\net8.0-windows\
+2. Double-click on "UniPlanner.exe"
+3. The application will launch immediately
+
+   Note: If you see a Windows SmartScreen warning, click "More info" 
+   and then "Run anyway" (this is normal for unsigned applications)
+
+
+METHOD 2: Running from Visual Studio 2022
+------------------------------------------
+1. Open "UniPlanner.sln" in Visual Studio 2022
+2. Ensure the solution builds successfully (press Ctrl+Shift+B)
+3. Press F5 or click the "Start" button to run the application
+4. The application will compile and launch in debug mode
+
+
+METHOD 3: Running via Command Line
+-----------------------------------
+1. Open Command Prompt or PowerShell
+2. Navigate to the project directory:
+   cd "path\to\UniPlanner"
+3. Run the following command:
+   dotnet run --project UniPlanner.csproj
+
+   OR navigate to bin\Debug\net8.0-windows\ and run:
+   UniPlanner.exe
+
+
+DATABASE LOCATION
+-----------------
+The SQLite database (uni.db) is stored in:
+   ProjectRoot\Data\uni.db
+
+The database is automatically created on first run with all required tables:
+- Subjects (course information)
+- Schedule (weekly timetable)
+- Tasks (assignments and deadlines)
+- Todos (personal task tracking)
+
+
+FEATURES OVERVIEW
+-----------------
+1. SUBJECT MANAGEMENT
+   - Register subjects with unique codes, names, and colors
+   - Track instructor information and credit hours
+   - Color-coded display for easy identification
+
+2. CLASS SCHEDULE MANAGEMENT
+   - Create weekly timetable with time slots
+   - Automatic time-conflict detection
+   - View schedule by day or full week
+   - Track class locations and instructors
+
+3. TASK/ASSIGNMENT TRACKING
+   - Manage assignments with due dates and priorities
+   - Link tasks to subjects for better organization
+   - Mark tasks as complete/incomplete
+   - View overdue and upcoming tasks
+
+4. TODO LIST
+   - Personal task management separate from academic tasks
+   - Categorize todos (Personal, Work, Shopping, etc.)
+   - Track completion status
+   - Sort by creation date or category
+
+
+NAVIGATING THE APPLICATION
+---------------------------
+Main Dashboard:
+- Displays weekly timetable view
+- Shows today's tasks and upcoming deadlines
+- Provides quick statistics on completion rates
+
+Menu Bar:
+- Manage Subjects: Add, edit, or delete subjects
+- Manage Class Schedule: Set up your weekly timetable
+- Manage Tasks: Track assignments and deadlines
+- Manage Todos: Personal task management
+
+
+TROUBLESHOOTING
+---------------
+
+Problem: "Application won't start"
+Solution: Ensure .NET 8.0 Runtime is installed
+          Download from: https://dotnet.microsoft.com/download/dotnet/8.0
+
+Problem: "Database error on startup"
+Solution: 
+- Delete the uni.db file from the Data folder
+- Restart the application (database will be recreated)
+
+Problem: "Data not saving"
+Solution:
+- Check that the application has write permissions to the Data folder
+- Ensure the Data folder exists in the project directory
+
+Problem: "Build errors in Visual Studio"
+Solution:
+- Restore NuGet packages: Right-click solution → Restore NuGet Packages
+- Clean and rebuild: Build menu → Clean Solution → Rebuild Solution
+
+
+DATA BACKUP
+-----------
+To backup your data:
+1. Close the application
+2. Copy the file: Data\uni.db
+3. Store it in a safe location
+
+To restore data:
+1. Close the application
+2. Replace Data\uni.db with your backup file
+3. Restart the application
+
+
+TESTING INFORMATION
+-------------------
+The application includes NUnit test cases in the Tests folder:
+- TaskServiceTests.cs: Tests for task management functionality
+- ScheduleServiceTests.cs: Tests for schedule operations
+- ValidationHelperTests.cs: Tests for input validation
+
+To run tests:
+1. Open Test Explorer in Visual Studio (Test → Test Explorer)
+2. Click "Run All Tests"
+
+
+TECHNICAL NOTES
+---------------
+- Data Access: Hybrid approach using Dapper (Subjects, Schedule, Tasks) 
+               and Entity Framework Core 8.0 (Todos)
+- Database: SQLite with automatic schema migration
+- Culture: English (Australia) en-AU for date/time formatting
+- All dates are displayed in dd-MM-yyyy format
+
+
+KNOWN LIMITATIONS
+-----------------
+- Application is Windows-only (requires Windows OS)
+- No cloud synchronization (local storage only)
+- Single-user application (no multi-user support)
+- No mobile companion app
+
+
+CONTACT INFORMATION
+-------------------
+For questions or issues regarding this project:
+- Course: 32998 - .NET Applications Development
+- Institution: University of Technology Sydney (UTS)
+- Semester: Spring 2025
+
+Development Team:
+- Jin Lee (25388733) - Backend and Database Logic
+- Seoyoon Kim (25388442) - Frontend and Testing
+
+
+ADDITIONAL FILES
+----------------
+This submission package includes:
+- UniPlanner.exe (executable)
+- Source code (complete Visual Studio solution)
+- uni.db (SQLite database, created on first run)
+- Project report (PDF)
+- This instruction file (HOW_TO_RUN.txt)
+
+
+================================================================================
+                        Thank you for using UniPlanner!
+                    We hope this application helps you stay organized.
+================================================================================
+
+Last Updated: October 16, 2025
+
