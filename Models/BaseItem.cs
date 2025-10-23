@@ -3,8 +3,8 @@ using System;
 namespace UniPlanner.Models
 {
     /// <summary>
-    /// Abstract base class for all domain entities
-    /// Demonstrates polymorphism through inheritance and virtual methods
+    /// Abstract base class for all domain entities.
+    /// Demonstrates polymorphism through inheritance and virtual methods.
     /// </summary>
     public abstract class BaseItem
     {
